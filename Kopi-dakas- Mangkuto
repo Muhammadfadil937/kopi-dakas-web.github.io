@@ -2,47 +2,60 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KOPI DAKAS - YANG PALING MEMAHAMI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOPI DAKAS - Hotel Mangkuto Pekanbaru</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,sans-serif}
-body{background:#f8fafc}
-.header{background:#1e88e5;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;color:#fff;position:sticky;top:0;z-index:10}
-.logo{background:#ff1a1a;color:#fff;font-weight:900;padding:10px 18px;border-radius:16px;line-height:.9;font-size:18px}
-.hero{padding:28px 16px 22px;text-align:center;background:#f8fafc}
-.hero-box{background:#ff1a1a;color:#fff;padding:32px 20px;border-radius:28px;max-width:360px;margin:0 auto;font-weight:900;font-size:28px;line-height:1.1;box-shadow:0 0 0 5px #1e88e5}
-.btn-blue{background:#1e88e5;color:#fff;border:0;padding:14px 36px;border-radius:28px;font-weight:800;font-size:16px;margin:20px auto 0;cursor:pointer}
-.layanan{background:#1e88e5;color:#fff;padding:26px 16px;text-align:center;font-weight:900;font-size:21px}
-.menu{padding:24px 12px 100px;max-width:440px;margin:0 auto}
-.menu h2{text-align:center;font-weight:900;font-size:28px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{background:#fff;border-radius:18px;padding:14px 10px;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,.06)}
-.card img{width:100%;height:115px;object-fit:contain}
-.card h3{font-size:13px;font-weight:800;margin:8px 0 4px;min-height:32px}
-.price{color:#e53935;font-weight:900;font-size:16px;margin:4px 0}
-.btn-pesan{background:#1e88e5;color:#fff;border:0;width:100%;padding:10px;border-radius:18px;font-weight:800;margin-top:8px;cursor:pointer}
-.wa{position:fixed;bottom:16px;right:14px;background:#25d366;color:#fff;padding:12px 18px;border-radius:28px;font-weight:900;text-decoration:none;z-index:99}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#081a35;font-family:'Inter',sans-serif;display:flex;justify-content:center;color:white}
+.board{width:100%;max-width:480px;background:linear-gradient(180deg,#6ec1ff 0%,#2a8de8 25%,#0e5ab8 60%,#0a3d82 100%);min-height:100vh;position:relative;padding:0 0 160px;overflow:hidden}
+.header{padding:16px 18px 8px;display:flex;justify-content:space-between;align-items:start}
+.logo{font-family:'Anton',sans-serif;line-height:.9;font-size:30px;letter-spacing:1px;text-shadow:2px 3px 0 #061a3a}
+.logo span{font-size:11px;font-family:'Inter';font-weight:900;letter-spacing:2px}
+.vertical{font-family:'Anton',sans-serif;writing-mode:vertical-rl;font-size:88px;line-height:1;letter-spacing:5px;opacity:.95;text-shadow:3px 3px 0 #082a5a}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:12px 90px 12px 14px}
+.card{background:linear-gradient(180deg,#2a6cc0,#1e4a8a);border-radius:18px;padding:10px;position:relative;border:1px solid rgba(255,255,255,.2);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.card img{width:100%;height:88px;object-fit:contain;filter:drop-shadow(0 5px 8px rgba(0,0,0,.5));margin:4px 0}
+.card .name{font-size:9px;font-weight:900;line-height:1.15;min-height:28px;text-transform:uppercase}
+.card .sub{font-size:7px;opacity:.75;font-weight:800}
+.price-badge{position:absolute;right:-6px;bottom:-6px;background:#071e3f;color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;border:2.5px solid #7dc8ff}
+.add-btn{margin-top:6px;width:100%;background:#fff;color:#0a3d82;border:none;border-radius:99px;padding:6px;font-weight:900;font-size:9px}
+.liter-box{margin:12px 90px 0 14px;background:linear-gradient(180deg,#8ad0ff,#5ab4ff);border-radius:20px;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.liter-item{background:rgba(0,0,0,.12);border-radius:14px;padding:8px;text-align:center;position:relative}
+.liter-item img{width:68px;height:68px;object-fit:contain}
+.liter-item .lname{font-size:8px;font-weight:900;color:#061a3a;line-height:1.1;margin-top:4px}
+.cart-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:#061a3a;border-top:2px solid #2a8de8;padding:12px 14px;display:flex;flex-direction:column;gap:8px;z-index:99}
+.cart-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:800}
+.cart-list{max-height:90px;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.cart-item{display:flex;justify-content:space-between;font-size:10px;background:rgba(255,255,255,.07);padding:6px 8px;border-radius:8px}
+.wa-order{width:100%;background:#25D366;color:white;border:none;border-radius:99px;padding:14px;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px}
+.wa-order:disabled{opacity:.4}
+.badge-cart{background:#25D366;color:white;border-radius:99px;padding:2px 8px;font-size:10px}
+.location{font-size:9px;opacity:.7;margin-top:6px;text-align:center}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">KOPI<br>DAKAS</div><div>🛒 Keranjang</div></div>
-<div class="hero"><div class="hero-box">KOPI DAKAS<br>YANG PALING<br>MEMAHAMI</div><button class="btn-blue" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Lihat Menu</button></div>
-<div class="layanan">Layanan Pengiriman &<br>Pengambilan</div>
-<div class="menu" id="menu"><h2>MENU KOPI DAKAS</h2><div class="grid" id="grid"></div></div>
-<a class="wa" href="https://wa.me/6283132891180?text=Halo%20KOPI%20DAKAS" target="_blank">💬 WA</a>
+<div class="board">
+<div class="header"><div class="logo">KOPI<br>DAKAS<br><span>YANG PALING<br>MEMAHAMI</span></div><div class="vertical">MENU</div></div>
+<div class="menu-grid" id="menu"></div>
+<div class="liter-box" id="liter"></div>
+<div class="location">📍 HOTEL MANGKUTO, PEKANBARU • 16:00-23:00 WIB<br>Kopi Dakas Yang Paling Memahami</div>
+</div>
+<div class="cart-bar">
+<div class="cart-top"><div>🛒 Keranjang <span class="badge-cart" id="count">0</span></div><div id="total">Total: Rp 0</div></div>
+<div class="cart-list" id="cartList"><div style="opacity:.5;font-size:10px">Belum ada pesanan, klik Tambah di menu</div></div>
+<button class="wa-order" id="waBtn" disabled onclick="orderWA()">PESAN VIA WHATSAPP 083132891180</button>
+</div>
 <script>
-const WA="6283132891180";
-const menu=[
-{n:"Kopi Dakas Klasik",p:13000,f:"klasik_GAS.jpg",d:"Double Shot Espresso"},
-{n:"Kopi Susu Soft",p:13000,f:"soft_GAS.jpg",d:"Balance Sweet"},
-{n:"Kopi Susu Strong",p:13000,f:"strong_GAS.jpg",d:"Balance Flavor"},
-{n:"Matcha",p:13000,f:"matcha_GAS.jpg",d:"Creamy Matcha"},
-{n:"Coldbrew Peach",p:15000,f:"peach_GAS.jpg",d:"Segar Peach"},
-{n:"Chocolate",p:13000,f:"coklat_GAS.jpg",d:"Rich Chocolate"},
-{n:"Kopi Dakas Literan 1L",p:95000,f:"liter1_GAS.jpg",d:"1 Liter Botol"},
-{n:"Kopi Dakas Literan 500mL",p:49000,f:"liter500_GAS.jpg",d:"500 mL Botol"}
-];
-document.getElementById('grid').innerHTML=menu.map(m=>`<div class="card"><img src="${m.f}"><h3>${m.n}</h3><div style="font-size:10px;color:#6b7a90">${m.d}</div><div class="price">Rp ${m.p.toLocaleString('id-ID')}</div><button class="btn-pesan" onclick="window.open('https://wa.me/'+WA+'?text=Halo%20KOPI%20DAKAS%20DEPAN%20HOTEL%20MANGKUTO%20mau%20pesan%20'+encodeURIComponent(m.n),'_blank')">Pesan WA</button></div>`).join('');
+const menus=[{id:1,name:"COLDBREW PEACH",price:15000,img:"https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=300",note:""},{id:2,name:"KOPI DAKAS KLASIK",price:13000,img:"https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300",note:"DOUBLE SHOT"},{id:3,name:"MATCHA",price:13000,img:"https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=300",note:""},{id:4,name:"KOPI SUSU STRONG",price:13000,img:"https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=300",note:"BALANCE FLAVOR"},{id:5,name:"CHOCOLATE",price:13000,img:"https://images.unsplash.com/photo-1544787219-7f47cc556762?w=300",note:""},{id:6,name:"KOPI SUSU SOFT",price:13000,img:"https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=300",note:"SWEET"}];
+const liters=[{id:7,name:"KOPI DAKAS LITERAN 1L",price:49000,img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300"},{id:8,name:"KOPI DAKAS LITERAN 2L",price:95000,img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=300"}];
+let cart=[];
+const menuDiv=document.getElementById('menu');menus.forEach(m=>{menuDiv.innerHTML+=`<div class="card"><div class="name">${m.name}<br><span class="sub">${m.note}</span></div><img src="${m.img}"><div class="price-badge">${m.price/1000}K</div><button class="add-btn" onclick="add(${m.id})">+ TAMBAH</button></div>`;});
+const literDiv=document.getElementById('liter');liters.forEach(m=>{literDiv.innerHTML+=`<div class="liter-item"><img src="${m.img}"><div class="lname">${m.name}</div><div class="price-badge">${m.price/1000}K</div><button class="add-btn" onclick="add(${m.id})" style="background:#061a3a;color:white;margin-top:8px">+ TAMBAH</button></div>`;});
+function add(id){const all=[...menus,...liters];const item=all.find(x=>x.id===id);const found=cart.find(c=>c.id===id);if(found)found.qty++;else cart.push({...item,qty:1});render();}
+function render(){const list=document.getElementById('cartList');const count=document.getElementById('count');const totalEl=document.getElementById('total');const btn=document.getElementById('waBtn');if(cart.length===0){list.innerHTML='<div style="opacity:.5;font-size:10px">Belum ada pesanan, klik Tambah di menu</div>';count.innerText=0;totalEl.innerText='Total: Rp 0';btn.disabled=true;return;}let tot=0;let c=0;let html='';cart.forEach(i=>{tot+=i.price*i.qty;c+=i.qty;html+=`<div class="cart-item"><span>${i.qty}x ${i.name}</span><span>Rp ${(i.price*i.qty).toLocaleString('id-ID')} <b onclick="removeItem(${i.id})" style="margin-left:8px;color:#ff6b6b;cursor:pointer">✕</b></span></div>`});list.innerHTML=html;count.innerText=c;totalEl.innerText='Total: Rp '+tot.toLocaleString('id-ID');btn.disabled=false;}
+function removeItem(id){cart=cart.filter(x=>x.id!==id);render();}
+function orderWA(){let pesan="Halo Kopi Dakas Hotel Mangkuto%0A%0ASaya mau pesan:%0A";let total=0;cart.forEach(i=>{pesan+=`- ${i.qty}x ${i.name} = Rp ${(i.price*i.qty).toLocaleString('id-ID')}%0A`;total+=i.price*i.qty;});pesan+=`%0A*Total: Rp ${total.toLocaleString('id-ID')}*%0A%0ALokasi antar/jemput: %0ANama: `;window.open(`https://wa.me/6283132891180?text=${pesan}`,'_blank');}
 </script>
 </body>
 </html>
