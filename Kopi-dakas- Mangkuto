@@ -39,7 +39,7 @@ body{background:#081a35;font-family:'Inter',sans-serif;display:flex;justify-cont
 <div class="header"><div class="logo">KOPI<br>DAKAS<br><span>YANG PALING<br>MEMAHAMI</span></div><div class="vertical">MENU</div></div>
 <div class="menu-grid" id="menu"></div>
 <div class="liter-box" id="liter"></div>
-<div class="location">📍 HOTEL MANGKUTO, PEKANBARU • 16:00-23:00 WIB<br>Kopi Dakas Yang Paling Memahami</div>
+<div class="location">📍 HOTEL MANGKUTO, Payakumbuh• 08:00-22:00 WIB<br>Kopi Dakas Yang Paling Memahami</div>
 </div>
 <div class="cart-bar">
 <div class="cart-top"><div>🛒 Keranjang <span class="badge-cart" id="count">0</span></div><div id="total">Total: Rp 0</div></div>
