@@ -1,3 +1,5 @@
+<img width="1920" height="1280" alt="IMG-20261013-WA6826" src="https://github.com/user-attachments/assets/fcc83614-712b-4501-b879-c313a45a501b" />
+<img width="1920" height="1280" alt="IMG-20261013-WA6826" src="https://github.com/user-attachments/assets/ad5d82b8-b889-4ff1-8613-79f4acffc41d" />
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -30,7 +32,9 @@ header{position:fixed;top:0;left:0;right:0;height:56px;background:#1877F2;displa
 <header><div style="display:flex;gap:10px;align-items:center"><div class="logo">KOPI<br>DAKAS</div><div class="brand">KOPI <span>DAKAS</span></div></div><div class="cart" onclick="openCart()">👜<div class="badge" id="badge">0</div></div></header>
 <div class="wrap" id="list"></div>
 <div class="over" id="over" onclick="openCart()"></div>
-<div class="drawer" id="drawer"><h3 style="font-weight:800">Keranjang (<span id="c2">0</span>)</h3><div id="cartList" style="margin-top:10px"></div><div style="display:flex;justify-content:space-between;margin-top:12px;font-weight:800"><span>Total</span><span id="total">Rp 0</span></div><button class="btn blue" onclick="waAll()">Pesan via WA 083132891180</button></div>
+<div class="dr<img width="3024" height="4032" alt="IMG-20261005-WA0009" src="https://github.com/user-attachments/assets/8702ecbe-a602-4b31-8d9a-59fae0202e69" />
+<img width="720" height="1600" alt="Screenshot_2026_1013_133658" src="https://github.com/user-attachments/assets/635020f0-9481-48ce-8318-e52ca17534e7" />
+awer" id="drawer"><h3 style="font-weight:800">Keranjang (<span id="c2">0</span>)</h3><div id="cartList" style="margin-top:10px"></div><div style="display:flex;justify-content:space-between;margin-top:12px;font-weight:800"><span>Total</span><span id="total">Rp 0</span></div><button class="btn blue" onclick="waAll()">Pesan via WA 083132891180</button></div>
 <div class="float"><button class="circle" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button><button class="circle wa" onclick="location.href='https://wa.me/6283132891180'">W</button></div>
 <script>
 const WA="6283132891180";const IMG="kopi-asli.jpg";
