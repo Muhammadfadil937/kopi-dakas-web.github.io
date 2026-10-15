@@ -1,71 +1,518 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOPI DAKAS MANGKUTO 08.00-22.00</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#f6f7fb}
-header{position:sticky;top:0;z-index:99;background:#1e5bcf;color:white;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
-.badge{position:absolute;top:-6px;right:-6px;background:#e11d26;color:white;font-size:10px;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800}
-.banner{background:#dbeafe;color:#1e3a8a;padding:10px 16px;display:flex;justify-content:space-between;font-weight:700;font-size:13px;border-radius:0 0 16px 16px}
-.wrap{max-width:480px;margin:0 auto;background:white;min-height:100vh}
-.card-img{padding:16px}.card-img img{width:100%;border-radius:20px;background:white;height:380px;object-fit:contain}
-.info{padding:0 18px 18px}
-.title{font-size:22px;font-weight:800}.meta{color:#6b7280;font-size:13px;margin:8px 0;display:flex;gap:10px;align-items:center}
-.price-label{color:#6b7280;font-size:13px;margin-top:10px}.price{font-size:32px;font-weight:800}
-.desc{font-size:13px;color:#374151;margin-top:10px;line-height:1.5}
-.btns{display:flex;gap:10px;margin-top:16px}
-.btn{flex:1;border:none;border-radius:14px;padding:15px;font-weight:800;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
-.blue{background:#1877f2;color:white}.red{background:#e11d26;color:white}
-.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:white;border-top:1px solid #e5e7eb;display:flex;justify-content:space-around;padding:8px 0}
-.bottom div{font-size:11px;text-align:center;color:#6b7280}.bottom .active{color:#1877f2;font-weight:800}
-.cart-drawer{position:fixed;bottom:70px;left:50%;transform:translateX(-50%);width:95%;max-width:460px;background:white;border-radius:20px;box-shadow:0 10px 40px rgba(0,0,0,.2);padding:16px;display:none;z-index:100}
-.cart-drawer.on{display:block}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Dakas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #10234f;
+    }
+
+    .app {
+      max-width: 900px;
+      margin: auto;
+      min-height: 100vh;
+      background: white;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #043de0, #0870f4);
+      padding: 18px;
+      color: white;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 180px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 18px;
+      font-size: 28px;
+    }
+
+    /* SEARCH */
+    .search {
+      margin-top: 15px;
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 17px;
+    }
+
+    /* CONTENT */
+    main {
+      padding: 22px 15px 100px;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    .sub {
+      color: #405174;
+      margin-bottom: 20px;
+    }
+
+    /* PRODUCT GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      border: 1px solid #edf0f5;
+      border-radius: 18px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    }
+
+    .card img {
+      width: 100%;
+      height: 155px;
+      object-fit: contain;
+    }
+
+    .price {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: #0647e8;
+      color: white;
+      font-weight: bold;
+      padding: 8px 11px;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 8px 0 3px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #33466f;
+      margin-bottom: 13px;
+    }
+
+    /* WHATSAPP */
+    .wa {
+      display: inline-block;
+      background: #09aa69;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .wa:hover {
+      background: #078d58;
+    }
+
+    /* BOTTOM NAV */
+    .bottom {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, 100%);
+      height: 70px;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      z-index: 10;
+    }
+
+    .bottom button {
+      border: none;
+      background: white;
+      color: #667085;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .bottom button.active {
+      color: #0647e8;
+    }
+
+    .icon {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    /* HP */
+    @media (max-width: 520px) {
+
+      .logo {
+        width: 150px;
+        height: 65px;
+      }
+
+      .icons {
+        font-size: 22px;
+        gap: 10px;
+      }
+
+      main {
+        padding: 18px 10px 90px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .grid {
+        gap: 9px;
+      }
+
+      .card {
+        padding: 8px;
+      }
+
+      .card img {
+        height: 125px;
+      }
+
+      .card h3 {
+        font-size: 15px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .price {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .wa {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="wrap">
-<header>
-<div style="display:flex;align-items:center;gap:12px"><span style="font-size:22px">☰</span><span style="font-weight:800;font-size:22px">KOPI DAKAS</span></div>
-<div style="position:relative;background:white;width:36px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#1e5bcf" onclick="openCart()">🛒<div class="badge" id="badge">0</div></div>
-</header>
-<div class="banner"><span>KOPI DAKAS MANGKUTO</span><span>🕒 Buka 08.00 - 22.00</span></div>
 
-<div class="card-img"><img src="kopi-asli.jpg" alt="Kopi Dakas Mangkuto"></div>
-<div class="info">
-<div class="title">Kopi Dakas Mangkuto — Es Kopi Susu</div>
-<div class="meta">⭐ 4.8 (1.2rb+ terjual) 📍 Mangkuto, Padang</div>
-<div class="price-label">Harga Pas</div>
-<div class="price">Rp 12.000</div>
-<div class="desc">Es kopi susu khas Kopi Dakas Mangkuto. Paduan kopi robusta, susu segar, dan gula aren. Segar, manis pas, paling nemakan! <br><br><b>Yang Paling Memahami - IDUIK ISINYO BERJUANG TARUIH LAI NDAK PAHLAWAN WAK KO EH</b></div>
-<div class="btns">
-<button class="btn blue" onclick="buy()">👜 Beli Langsung</button>
-<button class="btn red" onclick="add()">🛒 Masuk Keranjang</button>
-</div>
-<div style="text-align:center;font-size:11px;color:#6b7280;margin-top:16px">Pastikan alamat pengirimanmu sudah benar sebelum checkout<br>📍 Hotel Mangkuto • Buka 08.00-22.00 WIB • WA 083132891180</div>
-</div>
+<div class="app">
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="top">
+
+      <!-- Ganti logo.jpg dengan nama file logo kamu -->
+      <img src="logo.jpg" class="logo" alt="Kopi Dakas">
+
+      <div class="icons">
+        <span>⌕</span>
+        <span>🛒</span>
+        <span>♙</span>
+      </div>
+
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search">
+      🔎
+      <input
+        id="search"
+        type="text"
+        placeholder="Cari menu Kopi Dakas..."
+        oninput="filterMenu()"
+      >
+    </div>
+
+  </header>
+
+
+  <!-- MENU -->
+  <main>
+
+    <h1>MENU</h1>
+
+    <p class="sub">
+      Semua Menu • 8 Produk • Estimasi 20-30 menit
+    </p>
+
+
+    <section class="grid" id="grid">
+
+
+      <!-- 1 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="klasik.jpg" alt="Kopi Dakas Klasik">
+
+        <h3>Kopi Dakas Klasik</h3>
+
+        <p>Double Shot Espresso</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Klasik"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 2 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="susu_strong.jpg" alt="Kopi Susu Strong">
+
+        <h3>Kopi Susu Strong</h3>
+
+        <p>Balance Flavor</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Susu%20Strong"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 3 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="susu_soft.jpg" alt="Kopi Susu Soft">
+
+        <h3>Kopi Susu Soft</h3>
+
+        <p>Balance Sweet Flavor</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Susu%20Soft"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 4 -->
+      <article class="card">
+
+        <span class="price">95K</span>
+
+        <img src="literan_1l.jpg" alt="Kopi Dakas Literan 1 Liter">
+
+        <h3>Kopi Dakas Literan</h3>
+
+        <p>1 Liter • Botol</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Literan%201%20Liter"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 5 -->
+      <article class="card">
+
+        <span class="price">15K</span>
+
+        <img src="coldbrew.jpg" alt="Coldbrew Peach">
+
+        <h3>Coldbrew Peach</h3>
+
+        <p>Segar • Peach</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Coldbrew%20Peach"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 6 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="matcha.jpg" alt="Matcha">
+
+        <h3>Matcha</h3>
+
+        <p>Creamy • Matcha</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Matcha"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 7 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="chocolate.jpg" alt="Chocolate">
+
+        <h3>Chocolate</h3>
+
+        <p>Rich Chocolate</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Chocolate"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 8 -->
+      <article class="card">
+
+        <span class="price">49K</span>
+
+        <img src="literan_500.jpg" alt="Kopi Dakas Literan 500 ml">
+
+        <h3>Kopi Dakas Literan</h3>
+
+        <p>500 mL • Botol</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Literan%20500%20mL"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- BOTTOM NAV -->
+  <!-- PROMO SUDAH DIHAPUS -->
+  <nav class="bottom">
+
+    <button
+      class="active"
+      onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    >
+      <span class="icon">⌂</span>
+      Home
+    </button>
+
+    <button onclick="alert('Keranjang masih kosong')">
+      <span class="icon">🛒</span>
+      Keranjang
+    </button>
+
+    <button onclick="alert('Halaman Akun')">
+      <span class="icon">♙</span>
+      Akun
+    </button>
+
+  </nav>
+
 </div>
 
-<div class="cart-drawer" id="drawer">
-<h3>Keranjang (<span id="c2">0</span>)</h3>
-<div id="cartList" style="margin-top:10px"></div>
-<div style="display:flex;justify-content:space-between;margin-top:12px;font-weight:800"><span>Total</span><span id="total">Rp 0</span></div>
-<button class="btn blue" style="width:100%;margin-top:12px" onclick="waAll()">Pesan via WA 083132891180</button>
-</div>
-
-<div class="bottom">
-<div class="active">🏠<br>Beranda</div><div>👜<br>Producto</div><div>📋<br>Pesanan</div><div>💬<br>Chat</div><div>👤<br>Akun</div>
-</div>
 
 <script>
-const WA="6283132891180";let cart=[];
-function add(){let f=cart.find(x=>x.name=="Es Kopi Susu");if(f)f.qty++;else cart.push({name:"Es Kopi Susu Clasic",price:12000,qty:1});upd();openCart(true)}
-function buy(){window.open(`https://wa.me/${WA}?text=Halo Kopi Dakas Mangkuto 08.00-22.00%0ASaya pesan Es Kopi Susu Rp 12.000`,'_blank')}
-function upd(){document.getElementById('badge').innerText=cart.reduce((a,b)=>a+b.qty,0);document.getElementById('c2').innerText=cart.reduce((a,b)=>a+b.qty,0);let tot=0;let h='';cart.forEach(c=>{tot+=c.price*c.qty;h+=`<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #eee;font-size:13px"><span>${c.qty}x ${c.name}</span><span>Rp ${(c.price*c.qty).toLocaleString('id-ID')}</span></div>`});document.getElementById('cartList').innerHTML=h||'Belum ada pesanan';document.getElementById('total').innerText='Rp '+tot.toLocaleString('id-ID')}
-function openCart(f){document.getElementById('drawer').classList.toggle('on',f!==false?f:undefined)}
-function waAll(){let t=`Halo Kopi Dakas Mangkuto 08.00-22.00%0A%0APesanan:%0A`;let tot=0;cart.forEach(c=>{t+=`- ${c.qty}x ${c.name} Rp ${(c.price*c.qty).toLocaleString('id-ID')}%0A`;tot+=c.price*c.qty});t+=`Total Rp ${tot}`;window.open(`https://wa.me/${WA}?text=${t}`,'_blank')}
+
+function filterMenu() {
+
+  const keyword =
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase();
+
+  const cards =
+    document.querySelectorAll(".card");
+
+  cards.forEach(function(card) {
+
+    const text =
+      card.innerText.toLowerCase();
+
+    if (text.includes(keyword)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+}
+
 </script>
+
 </body>
 </html>
