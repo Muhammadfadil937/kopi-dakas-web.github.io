@@ -16,7 +16,9 @@
 </nav>
 <div style="padding:110px 5% 40px;display:grid;grid-template-columns:1fr 380px;gap:25px">
 <div><h1 class="anton" style="font-size:74px;line-height:.9">KOPI<br>DAKAS 5<br><span style="font-size:18px;font-family:Inter">YANG PALING MEMAHAMI</span></h1>
-<p style="margin:16px 0;font-weight:700">Order via WA 083132891180 - Bayar QRIS - Mangkuto Pekanbaru</p>
+<p style="margin:16px 0;font-weight:700">Order via WA 083132891180 - Bayar QRIS - Mangkuto Payakumbuh<img width="876" height="656" alt="IMG_20261015_214313" src="https://github.com/user-attachments/assets/638a1dc2-21c8-4827-848f-7823cb2e6445" />
+<img width="767" height="1080" alt="IMG-20261017-WA7757" src="https://github.com/user-attachments/assets/4b4de63e-cb49-4595-bc34-0d38176a038e" />
+</p>
 <a href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas%205" class="btn btn-wa anton">CHAT WA SEKARANG</a></div>
 <div style="background:#fff;border-radius:20px;padding:10px;border:5px solid #000"><img src="qris.jpg" style="width:100%;border-radius:12px"><p style="color:#000;text-align:center;font-weight:800">KOPI DAKAS 5 - A01<br>NMID: ID1024356220649</p></div>
 </div>
