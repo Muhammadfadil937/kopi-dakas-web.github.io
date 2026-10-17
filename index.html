@@ -6,15 +6,14 @@
 <title>KOPI DAKAS 5</title>
 <style>
 body{margin:0;background:#fdf6ee;font-family:sans-serif}
-.header{background:#0022ff;color:#fff;padding:12px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
+.header{background:#0022ff;color:#fff;padding:12px;display:flex;align-items:center;gap:10px;position:sticky;top:0}
 .header img{height:40px;background:#fff;border-radius:8px;padding:3px}
 .menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center}
-.card img{width:100%;height:160px;object-fit:cover;background:#eee}
+.card img{width:100%;height:160px;object-fit:cover}
 .info{padding:8px}
-.info h3{margin:5px 0;font-size:16px}
-.price{color:#d32f2f;font-weight:bold;margin:4px 0}
-.btn{background:#16a34a;color:#fff;border:none;padding:8px 0;width:85%;border-radius:10px;font-weight:bold;margin-bottom:8px}
+.price{color:#d32f2f;font-weight:bold}
+.btn{background:#16a34a;color:#fff;border:none;padding:8px 0;width:85%;border-radius:10px;font-weight:bold;margin-top:5px}
 </style>
 </head>
 <body>
@@ -22,7 +21,18 @@ body{margin:0;background:#fdf6ee;font-family:sans-serif}
   <img src="logo.jpg" onerror="this.style.display='none'">
   <div><b>KOPI DAKAS 5</b><br><small style="font-size:11px">YANG PALING MEMAHAMI</small></div>
 </div>
-
 <div class="menu">
-  <div class="card"><img src="klasik.jpg"><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik 13K')">PESAN</button></div></div>
-  <div class="card"><img src="soft.jpg"><div class="info"><h3>Soft</h3><div
+  <div class="card"><img src="klasik.jpg"><div class="info"><b>Klasik</b><div class="price">13K</div><button class="btn" onclick="pesan('Klasik')">PESAN</button></div></div>
+  <div class="card"><img src="soft.jpg"><div class="info"><b>Soft</b><div class="price">13K</div><button class="btn" onclick="pesan('Soft')">PESAN</button></div></div>
+  <div class="card"><img src="strong.jpg"><div class="info"><b>Strong</b><div class="price">13K</div><button class="btn" onclick="pesan('Strong')">PESAN</button></div></div>
+  <div class="card"><img src="matcha.jpg"><div class="info"><b>Matcha</b><div class="price">13K</div><button class="btn" onclick="pesan('Matcha')">PESAN</button></div></div>
+  <div class="card"><img src="coklat.jpg"><div class="info"><b>Coklat</b><div class="price">13K</div><button class="btn" onclick="pesan('Coklat')">PESAN</button></div></div>
+  <div class="card"><img src="cold brew.jpg"><div class="info"><b>Cold Brew</b><div class="price">15K</div><button class="btn" onclick="pesan('Cold Brew')">PESAN</button></div></div>
+</div>
+<script>
+function pesan(m){
+  window.open("https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas%205%20mau%20pesan%20"+m,"_blank");
+}
+</script>
+</body>
+</html>
