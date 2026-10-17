@@ -1,40 +1,518 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KOPI DAKAS 5 - Mangkuto Payakumbuh</title>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:#0080FF;color:#fff}
-.anton{font-family:Anton,sans-serif}nav{position:fixed;top:0;width:100%;background:#0080FF;padding:12px 5%;display:flex;justify-content:space-between;border-bottom:3px solid #fff;z-index:10}
-.btn{padding:10px 20px;background:#fff;color:#0080FF;font-weight:800;border-radius:100px;text-decoration:none;border:3px solid #000;display:inline-block}
-.btn-wa{background:#25D366;color:#fff}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{background:#fff;color:#000;border:3px solid #000;border-radius:18px;padding:14px;text-align:center}
-.price{background:#000;color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:800;display:inline-block;margin-bottom:8px}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopi Dakas</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #10234f;
+    }
+
+    .app {
+      max-width: 900px;
+      margin: auto;
+      min-height: 100vh;
+      background: white;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #043de0, #0870f4);
+      padding: 18px;
+      color: white;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      width: 180px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .icons {
+      display: flex;
+      gap: 18px;
+      font-size: 28px;
+    }
+
+    /* SEARCH */
+    .search {
+      margin-top: 15px;
+      background: white;
+      border-radius: 16px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 17px;
+    }
+
+    /* CONTENT */
+    main {
+      padding: 22px 15px 100px;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    .sub {
+      color: #405174;
+      margin-bottom: 20px;
+    }
+
+    /* PRODUCT GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      border: 1px solid #edf0f5;
+      border-radius: 18px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    }
+
+    .card img {
+      width: 100%;
+      height: 155px;
+      object-fit: contain;
+    }
+
+    .price {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: #0647e8;
+      color: white;
+      font-weight: bold;
+      padding: 8px 11px;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin: 8px 0 3px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #33466f;
+      margin-bottom: 13px;
+    }
+
+    /* WHATSAPP */
+    .wa {
+      display: inline-block;
+      background: #09aa69;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .wa:hover {
+      background: #078d58;
+    }
+
+    /* BOTTOM NAV */
+    .bottom {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, 100%);
+      height: 70px;
+      background: white;
+      border-top: 1px solid #ddd;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      z-index: 10;
+    }
+
+    .bottom button {
+      border: none;
+      background: white;
+      color: #667085;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .bottom button.active {
+      color: #0647e8;
+    }
+
+    .icon {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 3px;
+    }
+
+    /* HP */
+    @media (max-width: 520px) {
+
+      .logo {
+        width: 150px;
+        height: 65px;
+      }
+
+      .icons {
+        font-size: 22px;
+        gap: 10px;
+      }
+
+      main {
+        padding: 18px 10px 90px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .grid {
+        gap: 9px;
+      }
+
+      .card {
+        padding: 8px;
+      }
+
+      .card img {
+        height: 125px;
+      }
+
+      .card h3 {
+        font-size: 15px;
+      }
+
+      .card p {
+        font-size: 13px;
+      }
+
+      .price {
+        font-size: 13px;
+        padding: 6px 8px;
+      }
+
+      .wa {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<nav><div class="anton">KOPI DAKAS 5<br><span style="font-size:10px">MANGKUTO PAYAKUMBUH</span></div><a href="https://wa.me/6283132891180" class="btn btn-wa">WA 083132891180</a></nav>
-<div style="padding:80px 5% 20px">
-<h1 class="anton" style="font-size:60px;line-height:.9">MENU<br>KOPI DAKAS 5</h1>
-<p style="font-weight:700;margin-top:8px">YANG PALING MEMAHAMI - Mangkuto Payakumbuh</p>
-<div class="grid">
-<div class="card"><div class="price">13K</div><div style="font-weight:800">KOPI DAKAS KLASIK</div><div style="font-size:11px">(Double Shoot Espresso)</div><a href="https://wa.me/6283132891180?text=Pesan%20KLASIK%2013K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN WA</a></div>
-<div class="card"><div class="price">13K</div><div style="font-weight:800">KOPI SUSU STRONG</div><div style="font-size:11px">(Balance Flavor)</div><a href="https://wa.me/6283132891180?text=Pesan%20STRONG%2013K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN WA</a></div>
-<div class="card"><div class="price">13K</div><div style="font-weight:800">KOPI SUSU SOFT</div><div style="font-size:11px">(Balance Sweet)</div><a href="https://wa.me/6283132891180?text=Pesan%20SOFT%2013K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN WA</a></div>
-<div class="card"><div class="price">15K</div><div style="font-weight:800">COLDBREW PEACH</div><a href="https://wa.me/6283132891180?text=Pesan%20PEACH%2015K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN 15K</a></div>
-<div class="card"><div class="price">13K</div><div style="font-weight:800">MATCHA</div><a href="https://wa.me/6283132891180?text=Pesan%20MATCHA%2013K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN 13K</a></div>
-<div class="card"><div class="price">13K</div><div style="font-weight:800">CHOCOLATE</div><a href="https://wa.me/6283132891180?text=Pesan%20CHOCOLATE%2013K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN 13K</a></div>
-<div class="card" style="background:#0080FF;color:#fff"><div class="price" style="background:#fff;color:#0080FF">95K</div><div style="font-weight:800">LITERAN 1 LITER</div><a href="https://wa.me/6283132891180?text=Pesan%20LITERAN%2095K" class="btn" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN 95K</a></div>
-<div class="card" style="background:#000;color:#fff"><div class="price" style="background:#0080FF">49K</div><div style="font-weight:800">LITERAN 500ML</div><a href="https://wa.me/6283132891180?text=Pesan%2049K" class="btn btn-wa" style="margin-top:8px;padding:6px 12px;font-size:12px">PESAN 49K</a></div>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="top">
+
+      <!-- Ganti logo.jpg dengan nama file logo kamu -->
+      <img src="logo.jpg" class="logo" alt="Kopi Dakas">
+
+      <div class="icons">
+        <span>⌕</span>
+        <span>🛒</span>
+        <span>♙</span>
+      </div>
+
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search">
+      🔎
+      <input
+        id="search"
+        type="text"
+        placeholder="Cari menu Kopi Dakas..."
+        oninput="filterMenu()"
+      >
+    </div>
+
+  </header>
+
+
+  <!-- MENU -->
+  <main>
+
+    <h1>MENU</h1>
+
+    <p class="sub">
+      Semua Menu • 8 Produk • Estimasi 20-30 menit
+    </p>
+
+
+    <section class="grid" id="grid">
+
+
+      <!-- 1 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="klasik.jpg" alt="Kopi Dakas Klasik">
+
+        <h3>Kopi Dakas Klasik</h3>
+
+        <p>Double Shot Espresso</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Klasik"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 2 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="susu_strong.jpg" alt="Kopi Susu Strong">
+
+        <h3>Kopi Susu Strong</h3>
+
+        <p>Balance Flavor</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Susu%20Strong"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 3 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="susu_soft.jpg" alt="Kopi Susu Soft">
+
+        <h3>Kopi Susu Soft</h3>
+
+        <p>Balance Sweet Flavor</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Susu%20Soft"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 4 -->
+      <article class="card">
+
+        <span class="price">95K</span>
+
+        <img src="literan_1l.jpg" alt="Kopi Dakas Literan 1 Liter">
+
+        <h3>Kopi Dakas Literan</h3>
+
+        <p>1 Liter • Botol</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Literan%201%20Liter"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 5 -->
+      <article class="card">
+
+        <span class="price">15K</span>
+
+        <img src="coldbrew.jpg" alt="Coldbrew Peach">
+
+        <h3>Coldbrew Peach</h3>
+
+        <p>Segar • Peach</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Coldbrew%20Peach"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 6 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="matcha.jpg" alt="Matcha">
+
+        <h3>Matcha</h3>
+
+        <p>Creamy • Matcha</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Matcha"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 7 -->
+      <article class="card">
+
+        <span class="price">13K</span>
+
+        <img src="chocolate.jpg" alt="Chocolate">
+
+        <h3>Chocolate</h3>
+
+        <p>Rich Chocolate</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Chocolate"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+
+      <!-- 8 -->
+      <article class="card">
+
+        <span class="price">49K</span>
+
+        <img src="literan_500.jpg" alt="Kopi Dakas Literan 500 ml">
+
+        <h3>Kopi Dakas Literan</h3>
+
+        <p>500 mL • Botol</p>
+
+        <a
+          class="wa"
+          href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas,%20saya%20mau%20pesan%20Kopi%20Dakas%20Literan%20500%20mL"
+          target="_blank"
+        >
+          🟢 Pesan WA
+        </a>
+
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <!-- BOTTOM NAV -->
+  <!-- PROMO SUDAH DIHAPUS -->
+  <nav class="bottom">
+
+    <button
+      class="active"
+      onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    >
+      <span class="icon">⌂</span>
+      Home
+    </button>
+
+    <button onclick="alert('Keranjang masih kosong')">
+      <span class="icon">🛒</span>
+      Keranjang
+    </button>
+
+    <button onclick="alert('Halaman Akun')">
+      <span class="icon">♙</span>
+      Akun
+    </button>
+
+  </nav>
+
 </div>
-</div>
-<div style="background:#fff;color:#000;padding:20px 5%;text-align:center;margin-top:20px;border-radius:24px 24px 0 0">
-<h2 class="anton" style="color:#0080FF">ORDER WA 083132891180</h2>
-<p style="font-weight:700">Mangkuto - Payakumbuh - QRIS ID1024356220649</p>
-</div>
-<footer style="background:#000;padding:14px;text-align:center;font-size:12px">© KOPI DAKAS 5 - MANGKUTO PAYAKUMBUH</footer>
+
+
+<script>
+
+function filterMenu() {
+
+  const keyword =
+    document
+      .getElementById("search")
+      .value
+      .toLowerCase();
+
+  const cards =
+    document.querySelectorAll(".card");
+
+  cards.forEach(function(card) {
+
+    const text =
+      card.innerText.toLowerCase();
+
+    if (text.includes(keyword)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
 </body>
 </html>
