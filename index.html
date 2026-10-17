@@ -23,7 +23,6 @@ body{background:#fdf8ef;color:#2b1a0e}
 .img{height:150px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:28px}
 .info{padding:10px}.price{color:#d73527;font-weight:800;margin-bottom:6px}
 .btn{background:#16a34a;color:#fff;border:0;width:90%;padding:9px;border-radius:10px;font-weight:800;cursor:pointer}
-/* QRIS SECTION */
 .qris-box{background:#fff;margin:20px 12px;border-radius:24px;padding:20px;box-shadow:0 8px 22px #0001;max-width:700px;margin-left:auto;margin-right:auto;text-align:center}
 .qris-box h2{font-size:28px;font-weight:900;margin-bottom:6px}
 .qris-box img{width:100%;max-width:340px;border-radius:16px;margin:14px 0;border:1px solid #eee}
@@ -34,50 +33,30 @@ body{background:#fdf8ef;color:#2b1a0e}
 </style>
 </head>
 <body>
-
 <div class="header"><div class="logo"><span class="r">KOPI</span> <span class="b">DAKAS</span></div></div>
-
 <div class="hero">
 <div class="badge">KOPI DAKAS 5 MANGKUTO</div>
 <h1>Ngopi enak,<br>nggak ribet.</h1>
-<p>Pesan & bayar langsung via QRIS - WA 083132891180</p>
-<a class="btn-wa" href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas%0AAtas%20nama%3A%0ADiambil%20dari%20gerobak%20Mangkuto">Pesan WA</a>
+<p>Pesan & bayar via QRIS - WA 083132891180</p>
+<a class="btn-wa" href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas">Pesan WA</a>
 <a class="btn-qris" href="#qris">Bayar QRIS</a>
 </div>
-
 <div class="menu">
 <div class="title">Menu Kopi Dakas</div>
-<div class="sub">Pilih rasa favoritmu ☕</div>
+<div class="sub">7 Varian Favorit ☕</div>
 <div class="grid">
 <div class="card"><div class="img" style="background:#4b2e1a">KLASIK</div><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik 13K')">PESAN</button></div></div>
 <div class="card"><div class="img" style="background:#1a1a1a">STRONG</div><div class="info"><h3>Strong</h3><div class="price">13K</div><button class="btn" onclick="pesan('Strong 13K')">PESAN</button></div></div>
 <div class="card"><div class="img" style="background:#d2b48c;color:#5a3a1a">SOFT</div><div class="info"><h3>Soft</h3><div class="price">13K</div><button class="btn" onclick="pesan('Soft 13K')">PESAN</button></div></div>
 <div class="card"><div class="img" style="background:#7fb069">MATCHA</div><div class="info"><h3>Matcha</h3><div class="price">13K</div><button class="btn" onclick="pesan('Matcha 13K')">PESAN</button></div></div>
 <div class="card"><div class="img" style="background:#5d4037">COKLAT</div><div class="info"><h3>Coklat</h3><div class="price">13K</div><button class="btn" onclick="pesan('Coklat 13K')">PESAN</button></div></div>
-<div class="card"><div class="img" style="background:#ff8a65">PEACH</div><div class="info"><h3>Peach</h3><div class="price">15K</div><button class="btn" onclick="pesan('Peach 15K')">PESAN</button></div></div>
-<div class="card"><div class="img" style="background:#0a2540">COLD BREW</div><div class="info"><h3>Cold Brew</h3><div class="price">18K</div><button class="btn" onclick="pesan('Cold Brew 18K')">PESAN</button></div></div>
-<div class="card"><div class="img" style="background:#c0392b">2 LITER</div><div class="info"><h3>2 Liter</h3><div class="price">95K</div><button class="btn" onclick="pesan('2 Liter 95K')">PESAN</button></div></div>
+<div class="card"><div class="img" style="background:#ff8a65">PEACH</div><div class="info"><h3>Peach</h3><div class="price">15K</div><button class="btn" onclick="pesan('cold brew Peach 15K')">PESAN</button></div></div>
+<div class="card"><div class="img" style="background:#0a2540">COLD BREW</div><div class="info"><h3>Cold Brew</h3><div class="price">15K</div><button class="btn" onclick="pesan('Cold Brew 15K')">PESAN</button></div></div>
 </div>
 </div>
-
 <div class="qris-box" id="qris">
 <h2>Bayar via QRIS</h2>
 <div class="qris-nmid">KOPI DAKAS 5<br>NMID: ID1024356220649</div>
 <img src="qris.jpg" alt="QRIS Kopi Dakas 5">
-<div class="qris-note">SATU QRIS UNTUK SEMUA - Scan pakai GoPay, OVO, Dana, BCA Mobile, dll</div>
-<p style="font-size:13px;color:#666;margin-bottom:12px">1. Pilih menu & klik PESAN<br>2. Bayar via QRIS di atas<br>3. Kirim bukti transfer ke WA</p>
-<a class="btn-wa-qris" href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas%205%20Mangkuto%0A%0AAtas%20nama%3A%20%0ADiambil%20dari%20gerobak%20Mangkuto%0APesanan%3A%20%0ASudah%20bayar%20via%20QRIS%20-%20kirim%20bukti">Sudah Bayar? Kirim Bukti ke WA</a>
-</div>
-
-<div class="footer">KOPI DAKAS 5 - Mangkuto<br>WA 083132891180 | QRIS NMID ID1024356220649</div>
-
-<script>
-function pesan(m){
-  var t = "Halo Kopi Dakas 5 Mangkuto,mau pesan\n\nAtas nama: \nDiambil dari gerobak Mangkuto\nPesanan: " + m + " x 1\n\nMau bayar via QRIS ya Kak";
-  window.open("https://wa.me/6283132891180?text=" + encodeURIComponent(t), "_blank");
-  setTimeout(function(){document.getElementById('qris').scrollIntoView({behavior:'smooth'})}, 800);
-}
-</script>
-
-</body>
-</html>
+<div class="qris-note">SATU QRIS UNTUK SEMUA - Scan pakai GoPay, OVO, Dana, BCA Mobile</div>
+<a class="btn-wa-qris" href="https://wa.me/6283132891180?text=Halo%20Kopi%20Dakas%205%0ASudah%20bayar%20QRIS%20-%20kirim%20bukti">
