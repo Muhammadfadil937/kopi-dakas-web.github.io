@@ -7,7 +7,7 @@
 <style>
 body{margin:0;background:#fdf6ee;font-family:sans-serif}
 .header{background:#0022ff;color:#fff;padding:12px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
-.header img{height:40px;background:#fff;border-radius:8px;padding:2px}
+.header img{height:40px;background:#fff;border-radius:8px;padding:3px}
 .menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
 .card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center}
 .card img{width:100%;height:160px;object-fit:cover;background:#eee}
@@ -15,7 +15,6 @@ body{margin:0;background:#fdf6ee;font-family:sans-serif}
 .info h3{margin:5px 0;font-size:16px}
 .price{color:#d32f2f;font-weight:bold;margin:4px 0}
 .btn{background:#16a34a;color:#fff;border:none;padding:8px 0;width:85%;border-radius:10px;font-weight:bold;margin-bottom:8px}
-.btn:active{transform:scale(0.95)}
 </style>
 </head>
 <body>
@@ -25,18 +24,5 @@ body{margin:0;background:#fdf6ee;font-family:sans-serif}
 </div>
 
 <div class="menu">
-  <div class="card"><img src="klasik.jpg"><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik')">PESAN</button></div></div>
-  <div class="card"><img src="soft.jpg"><div class="info"><h3>Soft</h3><div class="price">13K</div><button class="btn" onclick="pesan('Soft')">PESAN</button></div></div>
-  <div class="card"><img src="strong.jpg"><div class="info"><h3>Strong</h3><div class="price">13K</div><button class="btn" onclick="pesan('Strong')">PESAN</button></div></div>
-  <div class="card"><img src="matcha.jpg"><div class="info"><h3>Matcha</h3><div class="price">13K</div><button class="btn" onclick="pesan('Matcha')">PESAN</button></div></div>
-  <div class="card"><img src="coklat.jpg"><div class="info"><h3>Coklat</h3><div class="price">13K</div><button class="btn" onclick="pesan('Coklat')">PESAN</button></div></div>
-  <div class="card"><img src="coldbrew.jpg"><div class="info"><h3>Cold Brew</h3><div class="price">15K</div><button class="btn" onclick="pesan('Cold Brew')">PESAN</button></div></div>
-</div>
-
-<script>
-function pesan(menu){
-  window.open('https://wa.me/628XXXX?text=Halo%20Kopi%20Dakas%205,%20saya%20mau%20pesan%20'+menu,'_blank');
-}
-</script>
-</body>
-</html>
+  <div class="card"><img src="klasik.jpg"><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik 13K')">PESAN</button></div></div>
+  <div class="card"><img src="soft.jpg"><div class="info"><h3>Soft</h3><div
