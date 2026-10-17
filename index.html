@@ -2,63 +2,40 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kopi Dakas 5<style</
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-body{background:#fdf8ef}
-.header{background:#fff;padding:14px 20px;box-shadow:0 2px 10px #0001;position:sticky;top:0;z-index:10}
-.logo{font-weight:900;font-size:26px}.r{color:#d73527}.b{color:#0a7ca3}
-.hero{padding:20px}
-.badge{background:#d73527;color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block;margin-bottom:10px}
-.hero h1{font-size:38px;font-weight:900;line-height:.9;margin-bottom:10px}
-.btn-wa{background:#0a7ca3;color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800;display:inline-block;margin:5px}
-.btn-qris{background:#d73527;color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800;display:inline-block;margin:5px}
-.menu{padding:10px}
-.title{text-align:center;font-size:26px;font-weight:900}.sub{text-align:center;color:#8a6b56;margin-bottom:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:700px;margin:0 auto}
-.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 14px #0001;text-align:center;padding-bottom:10px}
-.card img{width:100%;height:155px;object-fit:cover;display:block}
-.img{height:155px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900}
-.info{padding:8px}.price{color:#d73527;font-weight:800;margin:4px 0}
-.btn{background:#16a34a;color:#fff;border:0;width:92%;padding:8px;border-radius:8px;font-weight:800}
-.qris-box{background:#fff;margin:18px 10px;border-radius:20px;padding:18px;text-align:center;box-shadow:0 6px 18px #0001;max-width:700px;margin:0 auto}
-.qris-box img{width:100%;max-width:320px;border-radius:12px;margin:10px 0;border:1px solid #eee}
-.footer{text-align:center;padding:20px;color:#8a6b56;font-size:11px}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KOPI DAKAS 5</title>
+<style>
+body{margin:0;background:#fdf6ee;font-family:sans-serif}
+.header{background:#0022ff;color:#fff;padding:12px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:10}
+.header img{height:40px;background:#fff;border-radius:8px;padding:2px}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.1);text-align:center}
+.card img{width:100%;height:160px;object-fit:cover;background:#eee}
+.info{padding:8px}
+.info h3{margin:5px 0;font-size:16px}
+.price{color:#d32f2f;font-weight:bold;margin:4px 0}
+.btn{background:#16a34a;color:#fff;border:none;padding:8px 0;width:85%;border-radius:10px;font-weight:bold;margin-bottom:8px}
+.btn:active{transform:scale(0.95)}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo"><span class="r">KOPI</span> <span class="b">DAKAS</span> 5</div></div>
-<div class="hero">
-<div class="badge">KOPIDAKAS 📍 MANGKUTO 
-<h1>Ngopi enak,<br>nggak ribet.</h1>
-<a class="btn-wa" href="https://wa.me/6283132891180">Pesan WA</a>
-<a class="btn-qris" href="#qris">Bayar QRIS</a>
+<div class="header">
+  <img src="logo.jpg" onerror="this.style.display='none'">
+  <div><b>KOPI DAKAS 5</b><br><small style="font-size:11px">YANG PALING MEMAHAMI</small></div>
 </div>
+
 <div class="menu">
-<div class="title">Menu Kopi Dakas</div>
-<div class="sub">Menu 
-<div class="grid">
-<div class="card"><img src="klasik.jpg"><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik 13K')">PESAN</button></div></div>
-<div class="card"><div class="img" style="background:#111">STRONG</div><div class="info"><h3>Strong</h3><div class="price">13K</div><button class="btn" onclick="pesan('Strong 13K')">PESAN</button></div></div>
-<div class="card"><img src="soft.jpg"><div class="info"><h3>Soft</h3><div class="price">13K</div><button class="btn" onclick="pesan('Soft 13K')">PESAN</button></div></div>
-<div class="card"><img src="matcha.jpg"><div class="info"><h3>Matcha</h3><div class="price">13K</div><button class="btn" onclick="pesan('Matcha 13K')">PESAN</button></div></div>
-<div class="card"><img src="coklat.jpg"><div class="info"><h3>Coklat</h3><div class="price">13K</div><button class="btn" onclick="pesan('Coklat 13K')">PESAN</button></div></div>
-<div class="card"><img src="coldbrew.jpg"><div class="info"><h3>Cold Brew</h3><div class="price">15K</div><button class="btn" onclick="pesan('Cold Brew 15K')">PESAN</button></div></div>
-</div>class="card"><img scr= "strong.jpg"><div class="info"><h3>
+  <div class="card"><img src="klasik.jpg"><div class="info"><h3>Klasik</h3><div class="price">13K</div><button class="btn" onclick="pesan('Klasik')">PESAN</button></div></div>
+  <div class="card"><img src="soft.jpg"><div class="info"><h3>Soft</h3><div class="price">13K</div><button class="btn" onclick="pesan('Soft')">PESAN</button></div></div>
+  <div class="card"><img src="strong.jpg"><div class="info"><h3>Strong</h3><div class="price">13K</div><button class="btn" onclick="pesan('Strong')">PESAN</button></div></div>
+  <div class="card"><img src="matcha.jpg"><div class="info"><h3>Matcha</h3><div class="price">13K</div><button class="btn" onclick="pesan('Matcha')">PESAN</button></div></div>
+  <div class="card"><img src="coklat.jpg"><div class="info"><h3>Coklat</h3><div class="price">13K</div><button class="btn" onclick="pesan('Coklat')">PESAN</button></div></div>
+  <div class="card"><img src="coldbrew.jpg"><div class="info"><h3>Cold Brew</h3><div class="price">15K</div><button class="btn" onclick="pesan('Cold Brew')">PESAN</button></div></div>
 </div>
-<div class="qris-box" id="qris">
-<h2>Bayar via QRIS</h2>
-<p>KOPI DAKAS 5 - NMID: ID1024356220649</p>
-<img src="qris.jpg" alt="QRIS">
-<p style="background:#fff3f3;color:#d73527;padding:8px;border-radius:8px;font-size:12px;margin:8px 0">Scan GoPay OVO Dana BCA Mobile</p>
-<a href="https://wa.me/6283132891180?text=Sudah%20bayar%20QRIS" style="background:#16a34a;color:#fff;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:800;display:inline-block;width:100%;max-width:320px">Sudah Bayar? Kirim Bukti</a>
-</div>
-<div class="footer">KOPI DAKAS 5 Mangkuto - WA 083132891180</div>
+
 <script>
-function pesan(m){
-var t="Halo Kopi Dakas 5 Mangkuto,%0AAtas nama:%0ADiambil dari gerobak Mangkuto%0APesanan: "+m+" x 1%0A%0ABayar via QRIS ya Kak";
-window.open("https://wa.me/6283132891180?text="+t,"_blank");
+function pesan(menu){
+  window.open('https://wa.me/628XXXX?text=Halo%20Kopi%20Dakas%205,%20saya%20mau%20pesan%20'+menu,'_blank');
 }
 </script>
 </body>
